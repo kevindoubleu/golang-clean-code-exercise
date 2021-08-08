@@ -22,14 +22,18 @@ func (t *transactions) Get(idx int) int {
         return t.data[idx]
 }
 
-// TODO: implement this method
-// i.e. go test is green
 func (t *transactions) GetTotal() int {
-        return 0
+        total := 0
+        for _, v := range t.data {
+                total += v
+        }
+        return total
 }
 
-// TODO: implement this method
-// i.e. go test is green
 func (t *transactions) GetTotalWithinRange(i, j int) int {
-        return 0
+        total := 0
+        for idx := i; idx <= j; idx++ {
+                total += t.data[idx]
+        }
+        return total
 }
